@@ -373,9 +373,10 @@ void TPC_Cells()
     // setup phi and theta steps
     /* use 5deg steps */
     static constexpr double deg_to_rad = M_PI/180.;
-    directLaser->SetPhiStepping( 72, 0*deg_to_rad, 360*deg_to_rad );
-    directLaser->SetThetaStepping( 17, 5*deg_to_rad, 90*deg_to_rad );
-    directLaser->SetDirectLaserAuto( true );
+    //directLaser->SetPhiStepping( 359, 1*deg_to_rad, 360*deg_to_rad );
+    //directLaser->SetThetaStepping( 85, 5*deg_to_rad, 90*deg_to_rad );
+    //directLaser->SetDirectLaserAuto( true );
+    directLaser->SetArbitraryThetaPhi( 75*deg_to_rad, 80*deg_to_rad );
     directLaser->set_double_param("drift_velocity", G4TPC::tpc_drift_velocity_sim);
     se->registerSubsystem(directLaser);
   }
@@ -439,7 +440,7 @@ void TPC_Cells()
   digitpc->Verbosity(verbosity);
   cout << " Tpc digitizer: Setting ENC to " << ENC << " ADC threshold to " << ADC_threshold
        << " maps+Intt layers set to " << G4MVTX::n_maps_layer + G4INTT::n_intt_layer << endl;
-  digitpc ->set_skip_noise_flag(false);
+  digitpc ->set_skip_noise_flag(true);
   se->registerSubsystem(digitpc);
 
 }

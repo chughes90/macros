@@ -42,7 +42,7 @@ namespace Enable
   bool MICROMEGAS_CLUSTER = false;
   bool MICROMEGAS_QA = false;
 
-  bool TRACKING_TRACK = false;
+  bool TRACKING_TRACK = true;
   bool TRACKING_EVAL = false;
   int TRACKING_VERBOSITY = 0;
   bool TRACKING_QA = false;
@@ -118,10 +118,10 @@ namespace G4TPC
   bool ENABLE_CENTRAL_MEMBRANE_HITS = false;
   
   // enable direct laser g4hits generation
-  bool ENABLE_DIRECT_LASER_HITS = false;
+  bool ENABLE_DIRECT_LASER_HITS = true;
 
   // save histograms
-  bool DIRECT_LASER_SAVEHISTOGRAMS = false;
+  bool DIRECT_LASER_SAVEHISTOGRAMS = true;
 
   // do cluster <-> hit association
   bool DO_HIT_ASSOCIATION = true;
